@@ -1,0 +1,12 @@
+{
+    "name": "user1",
+    "email": "user1@email.com",
+    "favourite": [
+        {
+            "fav": "UM1"
+        },
+        {
+            "fav": "fjs"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+// Controller for exposing endpoints to external users
+package com.example.FavDB;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+    @Autowired
+    private UserService userService;
+
+    // Create new user
+    @PostMapping
+    public User creatUser(@RequestBody User user) { 
+        System.out.println("createUser function");
+        userService.createUser(user); 
+        return user;
+    }
+
+    // Create new user
+    @PostMapping("/many")
+    public List<User> createManyUsers(@RequestBody List<User> user) { 
+        System.out.println("createManyUsers function");
+        return userService.createManyUsers(user); 
+    }
+
+    // Get all users
+    @GetMapping
+    public List<User> getAllUsers() { 
+        System.out.println("getAllUsers function");
+        return userService.getAllUsers(); 
+    }
+    
+    // Get user by ID
+    @GetMapping("/id")
+    public Optional<User> getUserById(@RequestParam(value="id") Long id) { 
+        System.out.println("getUserById function");
+        return userService.getUserById(id); 
+    }
+    // Get user by ID
+    @GetMapping("/name")
+    public Optional<User> getUserByName(@RequestParam(value="name") String name) { 
+        System.out.println("getUserByName function");
+        return userService.getUserByName(name); 
+    }
+
+    // Update user by ID
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable Long id, @RequestBody User userDetails) { 
+        System.out.println("updateUser function");
+        return userService.updateUser(id, userDetails); 
+    }
+
+    // Delete all users
+    @DeleteMapping
+    public String deleteAllUsers() { 
+        System.out.println("deleteAllUsers function");
+        userService.deleteAllUsers();
+        return "All users have been purged";
+    }
+
+    // Delete user by ID
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) { 
+        System.out.println("deleteUser function");
+        userService.deleteUser(id); 
+    }
+}

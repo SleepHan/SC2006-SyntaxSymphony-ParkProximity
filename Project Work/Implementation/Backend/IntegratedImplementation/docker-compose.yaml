@@ -1,0 +1,26 @@
+version: '3'
+services:
+  # Spring Boot application
+  spring-app:
+    build:
+      context: . # Path to your Spring Boot app's Dockerfile
+    ports:
+      - "8080:8080" # Map the Spring Boot app's port to host
+    depends_on:
+      - postgresqldb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresqldb:5432/users
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=your_database_password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  # PostgreSQL database (use the official image)
+  postgresqldb:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: users
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_database_password
+    ports:
+      - "5432:5432" # Map the PostgreSQL port to host
+    

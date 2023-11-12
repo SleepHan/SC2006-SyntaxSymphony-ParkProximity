@@ -1,0 +1,26 @@
+[
+    {
+        "name": "user1",
+        "email": "user1@email.com",
+        "favourite": [
+            {
+                "fav": "UM1"
+            },
+            {
+                "fav": "fjs"
+            }
+        ]
+    },
+    {
+        "name": "user2",
+        "email": "user2@email.com",
+        "favourite": [
+            {
+                "fav": "UM1"
+            },
+            {
+                "fav": "kuhc"
+            }
+        ]
+    }
+]

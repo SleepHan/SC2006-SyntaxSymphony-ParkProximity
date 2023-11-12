@@ -1,0 +1,9 @@
+for post request in terminal
+curl -H "Content-Type: application/json" -d "{\"username\":\"user1\"}" -X POST "localhost:8080/users/register"
+curl -H "Content-Type: application/json" -d "{\"username\":\"user1\",\"email\":\"test@gmail.com\"}" -X POST "localhost:8080/users/register"
+
+for post request in powershell (not Invoke-WebRequest)
+curl -H "Content-Type: application/json" -d '{\"username\":\"user1\"}' -X POST "localhost:8080/users/register"
+
+json file
+curl --json @test.json "localhost:8080/users/many"

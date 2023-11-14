@@ -1,4 +1,5 @@
 # SC2006 Syntax Symphony - Park Proximity
+> Done by: Chee Han, Michael, Aaron, Arjun, Pranav, Owen
 
 ## Intro
 Given the recent congestion at car parks in Singapore, a user-friendly car-parking app that displays the availability of nearby car parks becomes essential. ParkProximity is a mobile application that displays the availability of car parks near the user and provides directions to the selected car park. Additional features include navigation to the nearby car park, pinpointing parked car locations, retrieving a record of the user’s parking history, and saving favourites.
